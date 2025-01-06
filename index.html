@@ -10,38 +10,78 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
 
         header {
             background-color: #28a745;
             color: white;
-            padding: 20px 10px;
+            padding: 20px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .container {
-            width: 90%;
-            margin: auto;
+        header button {
+            background-color: white;
+            color: #28a745;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        header button:hover {
+            background-color: #218838;
+            color: white;
+        }
+
+        .main-container {
+            display: flex;
+            flex: 1;
             overflow: hidden;
         }
 
-        nav {
+        .sidebar {
+            width: 20%;
             background-color: #333;
             color: white;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
         }
 
-        nav a {
+        .sidebar a {
             color: white;
             text-decoration: none;
-            padding: 5px 15px;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid #444;
         }
 
-        nav a:hover {
+        .sidebar a:hover {
             background-color: #28a745;
             border-radius: 5px;
+            padding-left: 5px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
         }
 
         .category {
@@ -75,7 +115,9 @@
         }
 
         .product img {
-            max-width: 100%;
+            width: 100%;
+            height: 200px; /* Fixed height for consistency */
+            object-fit: contain;
             border-bottom: 1px solid #ddd;
             padding-bottom: 10px;
         }
@@ -105,7 +147,14 @@
             background-color: #218838;
         }
 
+        .barcode {
+            font-size: 12px;
+            color: #555;
+            margin-top: 5px;
+        }
+
         footer {
+            display: none; /* Hidden by default */
             background-color: #333;
             color: white;
             text-align: center;
@@ -113,123 +162,162 @@
             margin-top: 20px;
         }
 
-        .category {
-            scroll-margin-top: 70px;
+        .search-bar {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 50%;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>CỬA HÀNG TẠP HÓA</h1>
+        <button onclick="scrollToSearch()"><img src="assets/img/home/home-solid.svg" alt="Home">Home</button>
     </header>
-    
-    <nav>
-        <a href="#beer">Bia</a>
-        <a href="#water">Nước</a>
-        <a href="#snacks">Snack</a>
-        <a href="#noodle">Mì tôm</a>
-    </nav>
 
-    <div class="container">
-        <div id="beer" class="category">
-            <h2>Bia</h2>
-            <div class="products">
-                <div class="product">
-                    <img src="assets/img/beer/saigon.jpg" alt="Beer 1">
-                    <h3>Thùng 24 lon bia Sài Gòn Lager 330ml</h3>
-                    <p>265.000đ</p>
-                    <button>Mua</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Beer 2">
-                    <h3>Beer 2</h3>
-                    <p></p>
-                    <button>Mua</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Beer 3">
-                    <h3>Beer 3</h3>
-                    <p>$5.00</p>
-                    <button>Mua</button>
-                </div>
-            </div>
+    <div class="main-container">
+        <div class="sidebar">
+            <a href="#beer">Bia</a>
+            <a href="#water">Nước</a>
+            <a href="#snacks">Snack</a>
+            <a href="#noodles">Mì tôm</a>
         </div>
 
-        <div id="water" class="category">
-            <h2>Nước</h2>
-            <div class="products">
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Water 1">
-                    <h3>Water 1</h3>
-                    <p>$1.00</p>
-                    <button>Mua</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Water 2">
-                    <h3>Water 2</h3>
-                    <p>$1.50</p>
-                    <button>Mua</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Water 3">
-                    <h3>Water 3</h3>
-                    <p>$2.00</p>
-                    <button>Mua</button>
-                </div>
+        <div class="content">
+            <div class="search-bar">
+                <input type="text" id="barcode-search" placeholder="Nhập mã barcode...">
+                <button onclick="searchByBarcode()">Tìm kiếm</button>
             </div>
-        </div>
 
-        <div id="snacks" class="category">
-            <h2>Snacks</h2>
-            <div class="products">
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Snack 1">
-                    <h3>Snack 1</h3>
-                    <p>$2.50</p>
-                    <button>Mua</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Snack 2">
-                    <h3>Snack 2</h3>
-                    <p>$3.00</p>
-                    <button>Mua</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Snack 3">
-                    <h3>Snack 3</h3>
-                    <p>$3.50</p>
-                    <button>Mua</button>
+            <div id="beer" class="category">
+                <h2>Bia</h2>
+                <div class="products">
+                    <div class="product" data-barcode="123456789">
+                        <img src="assets/img/beer/sg24.jpg.webp" alt="Beer 1">
+                        <h3>Thùng 24 lon bia Sài Gòn Lager 330ml</h3>
+                        <p>265.000đ</p>
+                        <p class="barcode">Mã barcode: 123456789</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="987654321">
+                        <img src="assets/img/beer/sg1.jpg" alt="Beer 2">
+                        <h3>1 lon bia Sài Gòn Lager 330ml</h3>
+                        <p>12.000đ</p>
+                        <p class="barcode">Mã barcode: 987654321</p>
+                        <button>Mua</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div id="noodles" class="category">
-            <h2>Mì tôm</h2>
-            <div class="products">
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Snack 1">
-                    <h3>Snack 1</h3>
-                    <p>$2.50</p>
-                    <button>Mua</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Snack 2">
-                    <h3>Snack 2</h3>
-                    <p>$3.00</p>
-                    <button>Mua</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Snack 3">
-                    <h3>Snack 3</h3>
-                    <p>$3.50</p>
-                    <button>Mua</button>
+            <div id="water" class="category">
+                <h2>Nước</h2>
+                <div class="products">
+                    <div class="product" data-barcode="111222333">
+                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                        <p>182.000đ</p>
+                        <p class="barcode">Mã barcode: 111222333</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="333222111">
+                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                        <h3>1 lon Coca 330 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 333222111</p>
+                        <button>Mua</button>
+                    </div>
                 </div>
             </div>
+
+            <div id="snacks" class="category">
+                <h2>Snack</h2>
+                <div class="products">
+                    <div class="product" data-barcode="123456789">
+                        <img src="assets/img/snack/5k.jpg" alt="Snack 1">
+                        <h3>Loại snack 5k</h3>
+                        <p>5.000đ</p>
+                        <p class="barcode">Mã barcode: 123456789</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="987654321">
+                        <img src="assets/img/snack/10k.png" alt="Snack 2">
+                        <h3>Loại snack 10k</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 987654321</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="noodles" class="category">
+                <h2>Mì tôm</h2>
+                <div class="products">
+                    <div class="product" data-barcode="123456789">
+                        <img src="assets/img/noodle/haohao30.jpg" alt="Noodle 1">
+                        <h3>Thùng mì Hảo Hảo vị Tôm Chua Cay 75g x 30 gói Acecook</h3>
+                        <p>265.000đ</p>
+                        <p class="barcode">Mã barcode: 123456789</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="987654321">
+                        <img src="assets/img/noodle/haohao1.jpg" alt="Noodle 2">
+                        <h3>1 gói mì Hảo Hảo vị Tôm Chua Cay 75g Acecook</h3>
+                        <p>5.000đ</p>
+                        <p class="barcode">Mã barcode: 987654321</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <footer>
         <p>&copy; 2025 Grocery Store. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function searchByBarcode() {
+            const searchValue = document.getElementById('barcode-search').value;
+            const products = document.querySelectorAll('.product');
+
+            products.forEach(product => {
+                const barcode = product.getAttribute('data-barcode');
+                if (barcode === searchValue) {
+                    product.classList.remove('hidden');
+                    product.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    product.classList.add('hidden');
+                }
+            });
+        }
+
+        function scrollToSearch() {
+            const searchBar = document.querySelector('.search-bar');
+            if (searchBar) {
+                searchBar.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    </script>
 </body>
 </html>
