@@ -4,203 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery Store</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        header {
-            background-color: #28a745;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header button {
-            background-color: white;
-            color: #28a745;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        header button img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-
-        header button:hover {
-            background-color: #218838;
-            color: white;
-        }
-
-        .main-container {
-            display: flex;
-            flex: 1;
-            overflow: hidden;
-        }
-
-        .sidebar {
-            width: 20%;
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            overflow-y: auto;
-        }
-
-        .sidebar a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            padding: 10px 0;
-            border-bottom: 1px solid #444;
-        }
-
-        .sidebar a:hover {
-            background-color: #28a745;
-            border-radius: 5px;
-            padding-left: 5px;
-        }
-
-        .content {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        .category {
-            margin: 20px 0;
-        }
-
-        .category h2 {
-            background-color: #28a745;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 20px 0;
-        }
-
-        .product {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            width: calc(33% - 20px);
-            text-align: center;
-            padding: 10px;
-        }
-
-        .product img {
-            width: 100%;
-            height: 200px; /* Fixed height for consistency */
-            object-fit: contain;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .product h3 {
-            color: #333;
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .product p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        .product button {
-            background-color: #28a745;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        .product button:hover {
-            background-color: #218838;
-        }
-
-        .barcode {
-            font-size: 12px;
-            color: #555;
-            margin-top: 5px;
-        }
-
-        footer {
-            display: none; /* Hidden by default */
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-
-        .search-bar {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .search-bar input {
-            padding: 10px;
-            width: 50%;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .search-bar button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .search-bar button:hover {
-            background-color: #218838;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
-        <button onclick="scrollToSearch()"><img src="assets/img/home/home-solid.svg" alt="Home">Home</button>
+        <div onclick="scrollToSearch()" class="logo">
+            CỬA HÀNG TẠP HÓA
+        </div>
+        <div class="search-input">
+            <input type="text" id="searchInput" placeholder="Nhập tên sản phẩm..." />
+            <button id="clearSearch" onclick="clearSearchInput()">X</button>
+        </div>
+        <div class="actions">
+            <button onclick="scrollToSearch()"><img src="assets/img/home/home-solid.svg" alt="Home" /></button>
+            <button><img src="assets/img/cart/cart-shopping-solid.svg" alt="Cart" /></button>
+        </div>
     </header>
 
     <div class="main-container">
         <div class="sidebar">
-            <a href="#beer">Bia</a>
-            <a href="#water">Nước</a>
-            <a href="#snacks">Snack</a>
-            <a href="#noodles">Mì tôm</a>
+            <a href="#beer" class="parent-link">BIA</a>
+                <div class="sub-menu">
+                    <a href="#saigon">Bia Sài Gòn</a>
+                    <a href="#tiger">Bia Tiger</a>
+                </div>
+            <a href="#soft-drinks" class="parent-link">NƯỚC GIẢI KHÁT</a>
+                <div class="sub-menu">
+                    <a href="#coca">Coca</a>
+                    <a href="#pepsi">Pepsi</a>
+                    <a href="#sting">Sting</a>
+                    <a href="#c2">C2</a>
+                </div>
+            <a href="#energy-drinks" class="parent-link">NƯỚC TĂNG LỰC</a>
+                <div class="sub-menu">
+                    <a href="#redbull">Bò húc Redbull</a>
+                    <a href="#number1">Nước tăng lực Number1</a>
+                    <a href="#lipovitan">Lipovitan</a>
+                    <a href="#rockstar">Rockstar</a>
+                </div>
+            <a href="#mineral" class="parent-link">NƯỚC KHOÁNG, NƯỚC SUỐI</a>
+                <div class="sub-menu">
+                    <a href="#aquafina">Aquafina</a>
+                    <a href="#nsnumber1">Nước suối Number1</a>
+                </div>
+            <a href="#noodles" class="parent-link">MÌ, MIẾN, CHÁO, PHỞ</a>
+                <div class="sub-menu">
+                    <a href="#haohao">Hảo Hảo</a>
+                    <a href="#omachi">Omachi</a>
+                    <a href="#gaudo">Gấu đỏ</a>
+                </div>
+            <a href="#confection" class="parent-link">BÁNH KẸO CÁC LOẠI</a>
+                <div class="sub-menu">
+                    <a href="#snacks">Snack</a>
+                    <a href="#omachi">Omachi</a>
+                    <a href="#gaudo">Gấu đỏ</a>
+                </div>
+            <a href="#spices-sauces">DẦU ĂN, NƯỚC CHẤM, GIA VỊ</a>
+            <a href="#canned-food">ĐỒ HỘP</a>
+            <a href="#milk">SỮA</a>
+            <a href="#coffee">CÀ PHÊ, TRÀ</a>
+            <a href="#ice-cream">KEM</a>
+            <a href="#learning">ĐỒ DÙNG HỌC TẬP</a>
+            <a href="#personal-care">CHĂM SÓC CÁ NHÂN</a>
+            <a href="#toys">ĐỒ CHƠI</a>
+            <a href="#smoking">THUỐC LÁ</a>
+            <a href="#cleaning-house">VỆ SINH NHÀ CỬA</a>
+            <a href="#family-product">ĐỒ DÙNG GIA ĐÌNH</a>
         </div>
 
         <div class="content">
@@ -209,9 +78,9 @@
                 <button onclick="searchByBarcode()">Tìm kiếm</button>
             </div>
 
-            <div id="beer" class="category">
+            <div class="category">
                 <h2>Bia</h2>
-                <div class="products">
+                <div id="saigon" class="products">
                     <div class="product" data-barcode="123456789">
                         <img src="assets/img/beer/sg24.jpg.webp" alt="Beer 1">
                         <h3>Thùng 24 lon bia Sài Gòn Lager 330ml</h3>
@@ -227,63 +96,345 @@
                         <button>Mua</button>
                     </div>
                 </div>
+
+                <div id="tiger" class="products">
+                    <div class="product" data-barcode="603009415">
+                        <img src="assets/img/beer/tiger.jpg" alt="Beer 1">
+                        <h3>Thùng 20 lon bia Sài Gòn Lager 330ml</h3>
+                        <p>265.000đ</p>
+                        <p class="barcode">Mã barcode: 603009415</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="218372328">
+                        <img src="assets/img/beer/tiger2.jpg" alt="Beer 2">
+                        <h3>Thùng 24 bia Sài Gòn Lager 330ml</h3>
+                        <p>350.000đ</p>
+                        <p class="barcode">Mã barcode: 218372328</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
             </div>
 
-            <div id="water" class="category">
-                <h2>Nước</h2>
-                <div class="products">
-                    <div class="product" data-barcode="111222333">
+            <div class="category">
+                <h2>Nước ngọt</h2>
+                <div id="coca" class="products">
+                    <div class="product" data-barcode="926144075">
                         <img src="assets/img/water/coca24.jpg" alt="Water 1">
                         <h3>Thùng 24 lon Coca 330 ml</h3>
                         <p>182.000đ</p>
-                        <p class="barcode">Mã barcode: 111222333</p>
+                        <p class="barcode">Mã barcode: 926144075</p>
                         <button>Mua</button>
                     </div>
-                    <div class="product" data-barcode="333222111">
+                    <div class="product" data-barcode="587906955">
                         <img src="assets/img/water/coca1.jpg" alt="Water 2">
                         <h3>1 lon Coca 330 ml</h3>
                         <p>10.000đ</p>
-                        <p class="barcode">Mã barcode: 333222111</p>
+                        <p class="barcode">Mã barcode: 587906955</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+
+                <div class="products">
+                    <div id="pepsi" class="product" data-barcode="377922860">
+                        <img src="assets/img/water/pepsi.webp" alt="Water 1">
+                        <h3>Thùng 24 lon Pepsi 320 ml</h3>
+                        <p>182.000đ</p>
+                        <p class="barcode">Mã barcode: 377922860</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="834220575">
+                        <img src="assets/img/water/pepsi1.jpg" alt="Water 2">
+                        <h3>1 lon Pepsi 320 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 834220575</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+
+                <div id="sting" class="products">
+                    <div class="product" data-barcode="994449014">
+                        <img src="assets/img/water/sting24.webp" alt="Water 1">
+                        <h3>Thùng 24 lon Sting 320 ml</h3>
+                        <p>247.500đ</p>
+                        <p class="barcode">Mã barcode: 994449014</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="432294137">
+                        <img src="assets/img/water/sting1.webp" alt="Water 2">
+                        <h3>1 lon Sting 320 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 432294137</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+
+                <div id="c2" class="products">
+                    <div class="product" data-barcode="714066207">
+                        <img src="assets/img/water/c2.jpg" alt="Water 1">
+                        <h3>Thùng 24 chai các loại C2 455 ml</h3>
+                        <p>182.000đ</p>
+                        <p class="barcode">Mã barcode: 714066207</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="185073793">
+                        <img src="assets/img/water/c2chai.jpg" alt="Water 2">
+                        <h3>Các loại lon C2 455 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 185073793</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h2>Nước tăng lực</h2>
+                    <div id="redbull" class="products">
+                        <div class="product" data-barcode="546685892">
+                            <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                            <h3>Thùng 24 lon Coca 330 ml</h3>
+                            <p>182.000đ</p>
+                            <p class="barcode">Mã barcode: 546685892</p>
+                            <button>Mua</button>
+                        </div>
+                        <div class="product" data-barcode="152857894">
+                            <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                            <h3>1 lon Coca 330 ml</h3>
+                            <p>10.000đ</p>
+                            <p class="barcode">Mã barcode: 152857894</p>
+                            <button>Mua</button>
+                        </div>
+                    </div>
+    
+                    <div class="products">
+                        <div id="number1" class="product" data-barcode="493195856">
+                            <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                            <h3>Thùng 24 lon Coca 330 ml</h3>
+                            <p>182.000đ</p>
+                            <p class="barcode">Mã barcode: 493195856</p>
+                            <button>Mua</button>
+                        </div>
+                        <div class="product" data-barcode="344915615">
+                            <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                            <h3>1 lon Coca 330 ml</h3>
+                            <p>10.000đ</p>
+                            <p class="barcode">Mã barcode: 344915615</p>
+                            <button>Mua</button>
+                        </div>
+                    </div>
+    
+                    <div id="lipovitan" class="products">
+                        <div class="product" data-barcode="437485299">
+                            <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                            <h3>Thùng 24 lon Coca 330 ml</h3>
+                            <p>182.000đ</p>
+                            <p class="barcode">Mã barcode: 437485299</p>
+                            <button>Mua</button>
+                        </div>
+                        <div class="product" data-barcode="544830389">
+                            <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                            <h3>1 lon Coca 330 ml</h3>
+                            <p>10.000đ</p>
+                            <p class="barcode">Mã barcode: 544830389</p>
+                            <button>Mua</button>
+                        </div>
+                    </div>
+
+                <div id="rockstar" class="products">
+                    <div class="product" data-barcode="451200757">
+                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                        <p>182.000đ</p>
+                        <p class="barcode">Mã barcode: 451200757</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="416632822">
+                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                        <h3>1 lon Coca 330 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 416632822</p>
                         <button>Mua</button>
                     </div>
                 </div>
             </div>
 
+            <div class="category">
+                <h2>Nước tăng lực</h2>
+                <div id="redbull" class="products">
+                    <div class="product" data-barcode="374758463">
+                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                        <p>182.000đ</p>
+                        <p class="barcode">Mã barcode: 374758463</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="546685892">
+                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                        <h3>1 lon Coca 330 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 546685892</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+    
+                <div class="products">
+                    <div id="number1" class="product" data-barcode="889551429">
+                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                        <p>182.000đ</p>
+                        <p class="barcode">Mã barcode: 889551429</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="347914312">
+                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                        <h3>1 lon Coca 330 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 347914312</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+    
+                <div id="lipovitan" class="products">
+                    <div class="product" data-barcode="493195856">
+                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                        <p>182.000đ</p>
+                        <p class="barcode">Mã barcode: 493195856</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="824907228">
+                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                        <h3>1 lon Coca 330 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 824907228</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+
+                <div id="rockstar" class="products">
+                    <div class="product" data-barcode="685249633">
+                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                        <p>182.000đ</p>
+                        <p class="barcode">Mã barcode: 685249633</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="225392638">
+                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                        <h3>1 lon Coca 330 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 225392638</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2>Nước khoáng, nước suối</h2>
+                <div id="aquafina" class="products">
+                    <div class="product" data-barcode="451200757">
+                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                        <p>182.000đ</p>
+                        <p class="barcode">Mã barcode: 451200757</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="921648057">
+                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                        <h3>1 lon Coca 330 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 921648057</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+    
+                <div class="products">
+                    <div id="nsnumber1" class="product" data-barcode="659317482">
+                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                        <p>182.000đ</p>
+                        <p class="barcode">Mã barcode: 659317482</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="347914312">
+                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                        <h3>1 lon Coca 330 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 347914312</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+    
+                <div id="lipovitan" class="products">
+                    <div class="product" data-barcode="493195856">
+                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                        <p>182.000đ</p>
+                        <p class="barcode">Mã barcode: 493195856</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="144771926">
+                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                        <h3>1 lon Coca 330 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 144771926</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+
+                <div id="rockstar" class="products">
+                    <div class="product" data-barcode="824907228">
+                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                        <p>182.000đ</p>
+                        <p class="barcode">Mã barcode: 824907228</p>
+                        <button>Mua</button>
+                    </div>
+                    <div class="product" data-barcode="685249633">
+                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                        <h3>1 lon Coca 330 ml</h3>
+                        <p>10.000đ</p>
+                        <p class="barcode">Mã barcode: 685249633</p>
+                        <button>Mua</button>
+                    </div>
+                </div>
+            </div>
+
+
+            
             <div id="snacks" class="category">
                 <h2>Snack</h2>
                 <div class="products">
-                    <div class="product" data-barcode="123456789">
+                    <div class="product" data-barcode="385729104">
                         <img src="assets/img/snack/5k.jpg" alt="Snack 1">
                         <h3>Loại snack 5k</h3>
                         <p>5.000đ</p>
-                        <p class="barcode">Mã barcode: 123456789</p>
+                        <p class="barcode">Mã barcode: 385729104</p>
                         <button>Mua</button>
                     </div>
-                    <div class="product" data-barcode="987654321">
+                    <div class="product" data-barcode="451200757">
                         <img src="assets/img/snack/10k.png" alt="Snack 2">
                         <h3>Loại snack 10k</h3>
                         <p>10.000đ</p>
-                        <p class="barcode">Mã barcode: 987654321</p>
+                        <p class="barcode">Mã barcode: 451200757</p>
                         <button>Mua</button>
                     </div>
                 </div>
             </div>
 
-            <div id="noodles" class="category">
-                <h2>Mì tôm</h2>
-                <div class="products">
-                    <div class="product" data-barcode="123456789">
+            <div class="category">
+                <h2>Mì ăn liền</h2>
+                <div id="haohao" class="products">
+                    <div class="product" data-barcode="174039268">
                         <img src="assets/img/noodle/haohao30.jpg" alt="Noodle 1">
                         <h3>Thùng mì Hảo Hảo vị Tôm Chua Cay 75g x 30 gói Acecook</h3>
-                        <p>265.000đ</p>
-                        <p class="barcode">Mã barcode: 123456789</p>
+                        <p>180.000đ</p>
+                        <p class="barcode">Mã barcode: 174039268</p>
                         <button>Mua</button>
                     </div>
-                    <div class="product" data-barcode="987654321">
+                    <div class="product" data-barcode="286150394">
                         <img src="assets/img/noodle/haohao1.jpg" alt="Noodle 2">
                         <h3>1 gói mì Hảo Hảo vị Tôm Chua Cay 75g Acecook</h3>
                         <p>5.000đ</p>
-                        <p class="barcode">Mã barcode: 987654321</p>
+                        <p class="barcode">Mã barcode: 286150394</p>
                         <button>Mua</button>
                     </div>
                 </div>
@@ -297,27 +448,91 @@
     </footer>
 
     <script>
+        // Toggle sub-menu visibility
+        document.querySelectorAll('.parent-link').forEach(link => {
+            link.addEventListener('click', event => {
+                const subMenu = link.nextElementSibling;
+                if (subMenu && subMenu.classList.contains('sub-menu')) {
+                    subMenu.style.display = subMenu.style.display === 'block' ? 'none' : 'block';
+                    event.preventDefault();
+                }
+            });
+        });
+
+        // Highlight active section
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.category');
+            const sidebarLinks = document.querySelectorAll('.sidebar a');
+            let activeSection = '';
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    activeSection = `#${section.id}`;
+                }
+            });
+
+            sidebarLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === activeSection);
+            });
+        });
+
+        // Search by barcode
         function searchByBarcode() {
-            const searchValue = document.getElementById('barcode-search').value;
+            const searchValue = document.getElementById('barcode-search').value.trim();
             const products = document.querySelectorAll('.product');
+            let found = false;
 
             products.forEach(product => {
                 const barcode = product.getAttribute('data-barcode');
                 if (barcode === searchValue) {
                     product.classList.remove('hidden');
                     product.scrollIntoView({ behavior: 'smooth' });
+                    found = true;
                 } else {
                     product.classList.add('hidden');
                 }
             });
+
+            if (!found) {
+                alert('Không tìm thấy sản phẩm với mã barcode đã nhập.');
+            }
         }
 
+        // Scroll to search bar
         function scrollToSearch() {
             const searchBar = document.querySelector('.search-bar');
             if (searchBar) {
                 searchBar.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
+
+        // Search name product
+        function searchProduct() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const products = document.querySelectorAll('.product');
+
+            products.forEach(product => {
+                const productName = product.querySelector('h3').textContent.toLowerCase();
+                if (productName.includes(input)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        function clearSearchInput() {
+            document.getElementById('searchInput').value = '';
+            searchProduct(); // To reset the product display
+        }
+
+        document.getElementById('searchInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                searchProduct();
+            }
+        });
+
     </script>
 </body>
 </html>
