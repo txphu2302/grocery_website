@@ -287,7 +287,8 @@ footer {
 .cart-item {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
 .cart-item img {
@@ -297,12 +298,23 @@ footer {
     margin-right: 15px;
 }
 
+.cart-item .product-details {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+
 .cart-item button {
-    background: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
+    background: #ff4d4d; /* Red background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.cart-item button:hover {
+    background-color: #ff1a1a; /* Darker red on hover */
 }
 
 .cart-container button {
