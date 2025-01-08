@@ -17,8 +17,8 @@
         </div>
         <div class="actions">
             <button onclick="scrollToSearch()"><img src="assets/img/home/home-solid.svg" alt="Home" /></button>
-            <button><img src="assets/img/cart/cart-shopping-solid.svg" alt="Cart" /></button>
-        </div>
+            <button><img src="assets/img/cart/cart-shopping-solid.svg" alt="Cart" onclick="viewCart()" /></button>
+        </div>        
     </header>
 
     <div class="main-container">
@@ -45,6 +45,7 @@
             <a href="#mineral" class="parent-link">NƯỚC KHOÁNG, NƯỚC SUỐI</a>
                 <div class="sub-menu">
                     <a href="#aquafina">Aquafina</a>
+                     <a href="#pocari">Pocari Sweat</a>
                     <a href="#nsnumber1">Nước suối Number1</a>
                 </div>
             <a href="#noodles" class="parent-link">MÌ, MIẾN, CHÁO, PHỞ</a>
@@ -86,31 +87,31 @@
                         <h3>Thùng 24 lon bia Sài Gòn Lager 330ml</h3>
                         <p>265.000đ</p>
                         <p class="barcode">Mã barcode: 123456789</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                     <div class="product" data-barcode="987654321">
                         <img src="assets/img/beer/sg1.jpg" alt="Beer 2">
                         <h3>1 lon bia Sài Gòn Lager 330ml</h3>
                         <p>12.000đ</p>
                         <p class="barcode">Mã barcode: 987654321</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                 </div>
 
                 <div id="tiger" class="products">
                     <div class="product" data-barcode="603009415">
                         <img src="assets/img/beer/tiger.jpg" alt="Beer 1">
-                        <h3>Thùng 20 lon bia Sài Gòn Lager 330ml</h3>
+                        <h3>Thùng 20 lon bia Tiger Lager 330ml</h3>
                         <p>265.000đ</p>
                         <p class="barcode">Mã barcode: 603009415</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                     <div class="product" data-barcode="218372328">
                         <img src="assets/img/beer/tiger2.jpg" alt="Beer 2">
-                        <h3>Thùng 24 bia Sài Gòn Lager 330ml</h3>
+                        <h3>Thùng 24 bia Tiger Lager 330ml</h3>
                         <p>350.000đ</p>
                         <p class="barcode">Mã barcode: 218372328</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                 </div>
             </div>
@@ -119,69 +120,69 @@
                 <h2>Nước ngọt</h2>
                 <div id="coca" class="products">
                     <div class="product" data-barcode="926144075">
-                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
+                        <img src="assets/img/water/soft-drink/coca24.jpg" alt="Water 1">
                         <h3>Thùng 24 lon Coca 330 ml</h3>
                         <p>182.000đ</p>
                         <p class="barcode">Mã barcode: 926144075</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                     <div class="product" data-barcode="587906955">
-                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
+                        <img src="assets/img/water/soft-drink/coca1.jpg" alt="Water 2">
                         <h3>1 lon Coca 330 ml</h3>
                         <p>10.000đ</p>
                         <p class="barcode">Mã barcode: 587906955</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                 </div>
 
                 <div class="products">
                     <div id="pepsi" class="product" data-barcode="377922860">
-                        <img src="assets/img/water/pepsi.webp" alt="Water 1">
+                        <img src="assets/img/water/soft-drink/pepsi.webp" alt="Water 1">
                         <h3>Thùng 24 lon Pepsi 320 ml</h3>
                         <p>182.000đ</p>
                         <p class="barcode">Mã barcode: 377922860</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                     <div class="product" data-barcode="834220575">
-                        <img src="assets/img/water/pepsi1.jpg" alt="Water 2">
+                        <img src="assets/img/water/soft-drink/pepsi1.jpg" alt="Water 2">
                         <h3>1 lon Pepsi 320 ml</h3>
                         <p>10.000đ</p>
                         <p class="barcode">Mã barcode: 834220575</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                 </div>
 
                 <div id="sting" class="products">
                     <div class="product" data-barcode="994449014">
-                        <img src="assets/img/water/sting24.webp" alt="Water 1">
+                        <img src="assets/img/water/soft-drink/sting24.webp" alt="Water 1">
                         <h3>Thùng 24 lon Sting 320 ml</h3>
                         <p>247.500đ</p>
                         <p class="barcode">Mã barcode: 994449014</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                     <div class="product" data-barcode="432294137">
-                        <img src="assets/img/water/sting1.webp" alt="Water 2">
+                        <img src="assets/img/water/soft-drink/sting1.webp" alt="Water 2">
                         <h3>1 lon Sting 320 ml</h3>
                         <p>10.000đ</p>
                         <p class="barcode">Mã barcode: 432294137</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                 </div>
 
                 <div id="c2" class="products">
                     <div class="product" data-barcode="714066207">
-                        <img src="assets/img/water/c2.jpg" alt="Water 1">
+                        <img src="assets/img/water/soft-drink/c2.jpg" alt="Water 1">
                         <h3>Thùng 24 chai các loại C2 455 ml</h3>
                         <p>182.000đ</p>
                         <p class="barcode">Mã barcode: 714066207</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                     <div class="product" data-barcode="185073793">
-                        <img src="assets/img/water/c2chai.jpg" alt="Water 2">
+                        <img src="assets/img/water/soft-drink/c2chai.jpg" alt="Water 2">
                         <h3>Các loại lon C2 455 ml</h3>
                         <p>10.000đ</p>
                         <p class="barcode">Mã barcode: 185073793</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                 </div>
 
@@ -189,140 +190,69 @@
                     <h2>Nước tăng lực</h2>
                     <div id="redbull" class="products">
                         <div class="product" data-barcode="546685892">
-                            <img src="assets/img/water/coca24.jpg" alt="Water 1">
-                            <h3>Thùng 24 lon Coca 330 ml</h3>
+                            <img src="assets/img/water/energy-drink/redbull.webp" alt="Water 1">
+                            <h3>Thùng 24 lon Redbull 250 ml</h3>
                             <p>182.000đ</p>
                             <p class="barcode">Mã barcode: 546685892</p>
-                            <button>Mua</button>
+                            <button onclick="addToCart(this.parentElement)">Mua</button>
                         </div>
                         <div class="product" data-barcode="152857894">
-                            <img src="assets/img/water/coca1.jpg" alt="Water 2">
-                            <h3>1 lon Coca 330 ml</h3>
-                            <p>10.000đ</p>
+                            <img src="assets/img/water/energy-drink/redbull_1lon.jpg" alt="Water 2">
+                            <h3>1 lon Redbull 250 ml</h3>
+                            <p>15.000đ</p>
                             <p class="barcode">Mã barcode: 152857894</p>
-                            <button>Mua</button>
+                            <button onclick="addToCart(this.parentElement)">Mua</button>
                         </div>
                     </div>
     
                     <div class="products">
                         <div id="number1" class="product" data-barcode="493195856">
-                            <img src="assets/img/water/coca24.jpg" alt="Water 1">
-                            <h3>Thùng 24 lon Coca 330 ml</h3>
-                            <p>182.000đ</p>
+                            <img src="assets/img/water/energy-drink/number1.jpg" alt="Water 1">
+                            <h3>Thùng 24 chai Number One 330 ml</h3>
+                            <p>223.600đ</p>
                             <p class="barcode">Mã barcode: 493195856</p>
-                            <button>Mua</button>
+                            <button onclick="addToCart(this.parentElement)">Mua</button>
                         </div>
                         <div class="product" data-barcode="344915615">
-                            <img src="assets/img/water/coca1.jpg" alt="Water 2">
-                            <h3>1 lon Coca 330 ml</h3>
+                            <img src="assets/img/water/energy-drink/number1_1chai.jpg" alt="Water 2">
+                            <h3>1 lon chai Number One 330 ml</h3>
                             <p>10.000đ</p>
                             <p class="barcode">Mã barcode: 344915615</p>
-                            <button>Mua</button>
+                            <button onclick="addToCart(this.parentElement)">Mua</button>
                         </div>
                     </div>
     
                     <div id="lipovitan" class="products">
                         <div class="product" data-barcode="437485299">
-                            <img src="assets/img/water/coca24.jpg" alt="Water 1">
-                            <h3>Thùng 24 lon Coca 330 ml</h3>
-                            <p>182.000đ</p>
+                            <img src="assets/img/water/energy-drink/lipovitan.jpg" alt="Water 1">
+                            <h3>Thùng 24 lon Lipovitan 250 ml</h3>
+                            <p>205.000đ</p>
                             <p class="barcode">Mã barcode: 437485299</p>
-                            <button>Mua</button>
+                            <button onclick="addToCart(this.parentElement)">Mua</button>
                         </div>
                         <div class="product" data-barcode="544830389">
-                            <img src="assets/img/water/coca1.jpg" alt="Water 2">
-                            <h3>1 lon Coca 330 ml</h3>
+                            <img src="assets/img/water/energy-drink/lipovitan_1lon.jpg" alt="Water 2">
+                            <h3>1 lon Lipovitan 250 ml</h3>
                             <p>10.000đ</p>
                             <p class="barcode">Mã barcode: 544830389</p>
-                            <button>Mua</button>
+                            <button onclick="addToCart(this.parentElement)">Mua</button>
                         </div>
                     </div>
 
                 <div id="rockstar" class="products">
                     <div class="product" data-barcode="451200757">
-                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
-                        <h3>Thùng 24 lon Coca 330 ml</h3>
-                        <p>182.000đ</p>
+                        <img src="assets/img/water/energy-drink/rockstar.jpg" alt="Water 1">
+                        <h3>Thùng 24 lon Rockstar 250 ml</h3>
+                        <p>247.490đ</p>
                         <p class="barcode">Mã barcode: 451200757</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                     <div class="product" data-barcode="416632822">
-                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
-                        <h3>1 lon Coca 330 ml</h3>
+                        <img src="assets/img/water/energy-drink/rockstar_1lon.jpg" alt="Water 2">
+                        <h3>1 lon Rockstar 250 ml</h3>
                         <p>10.000đ</p>
                         <p class="barcode">Mã barcode: 416632822</p>
-                        <button>Mua</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category">
-                <h2>Nước tăng lực</h2>
-                <div id="redbull" class="products">
-                    <div class="product" data-barcode="374758463">
-                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
-                        <h3>Thùng 24 lon Coca 330 ml</h3>
-                        <p>182.000đ</p>
-                        <p class="barcode">Mã barcode: 374758463</p>
-                        <button>Mua</button>
-                    </div>
-                    <div class="product" data-barcode="546685892">
-                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
-                        <h3>1 lon Coca 330 ml</h3>
-                        <p>10.000đ</p>
-                        <p class="barcode">Mã barcode: 546685892</p>
-                        <button>Mua</button>
-                    </div>
-                </div>
-    
-                <div class="products">
-                    <div id="number1" class="product" data-barcode="889551429">
-                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
-                        <h3>Thùng 24 lon Coca 330 ml</h3>
-                        <p>182.000đ</p>
-                        <p class="barcode">Mã barcode: 889551429</p>
-                        <button>Mua</button>
-                    </div>
-                    <div class="product" data-barcode="347914312">
-                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
-                        <h3>1 lon Coca 330 ml</h3>
-                        <p>10.000đ</p>
-                        <p class="barcode">Mã barcode: 347914312</p>
-                        <button>Mua</button>
-                    </div>
-                </div>
-    
-                <div id="lipovitan" class="products">
-                    <div class="product" data-barcode="493195856">
-                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
-                        <h3>Thùng 24 lon Coca 330 ml</h3>
-                        <p>182.000đ</p>
-                        <p class="barcode">Mã barcode: 493195856</p>
-                        <button>Mua</button>
-                    </div>
-                    <div class="product" data-barcode="824907228">
-                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
-                        <h3>1 lon Coca 330 ml</h3>
-                        <p>10.000đ</p>
-                        <p class="barcode">Mã barcode: 824907228</p>
-                        <button>Mua</button>
-                    </div>
-                </div>
-
-                <div id="rockstar" class="products">
-                    <div class="product" data-barcode="685249633">
-                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
-                        <h3>Thùng 24 lon Coca 330 ml</h3>
-                        <p>182.000đ</p>
-                        <p class="barcode">Mã barcode: 685249633</p>
-                        <button>Mua</button>
-                    </div>
-                    <div class="product" data-barcode="225392638">
-                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
-                        <h3>1 lon Coca 330 ml</h3>
-                        <p>10.000đ</p>
-                        <p class="barcode">Mã barcode: 225392638</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                 </div>
             </div>
@@ -330,92 +260,73 @@
             <div class="category">
                 <h2>Nước khoáng, nước suối</h2>
                 <div id="aquafina" class="products">
-                    <div class="product" data-barcode="451200757">
-                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
-                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                    <div class="product" data-barcode="374758463">
+                        <img src="assets/img/water/mineral/aquafina.webp" alt="Water 1">
+                        <h3>Thùng 24 chai Aquafina 500ml</h3>
                         <p>182.000đ</p>
-                        <p class="barcode">Mã barcode: 451200757</p>
-                        <button>Mua</button>
+                        <p class="barcode">Mã barcode: 374758463</p>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
-                    <div class="product" data-barcode="921648057">
-                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
-                        <h3>1 lon Coca 330 ml</h3>
-                        <p>10.000đ</p>
-                        <p class="barcode">Mã barcode: 921648057</p>
-                        <button>Mua</button>
+                    <div class="product" data-barcode="546685892">
+                        <img src="assets/img/water/mineral/aquafina_1chai.jpg" alt="Water 2">
+                        <h3>1 chai Aquafina 500ml</h3>
+                        <p>5.000đ</p>
+                        <p class="barcode">Mã barcode: 546685892</p>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                 </div>
     
                 <div class="products">
-                    <div id="nsnumber1" class="product" data-barcode="659317482">
-                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
-                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                    <div id="pocari" class="product" data-barcode="889551429">
+                        <img src="assets/img/water/mineral/pocari.jpg" alt="Water 1">
+                        <h3>Thùng 24 chai Pocari Sweat 500 ml</h3>
                         <p>182.000đ</p>
-                        <p class="barcode">Mã barcode: 659317482</p>
-                        <button>Mua</button>
+                        <p class="barcode">Mã barcode: 889551429</p>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                     <div class="product" data-barcode="347914312">
-                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
-                        <h3>1 lon Coca 330 ml</h3>
+                        <img src="assets/img/water/mineral/pocari_1chai.jpg" alt="Water 2">
+                        <h3>1 chai Pocari Sweat 500 ml</h3>
                         <p>10.000đ</p>
                         <p class="barcode">Mã barcode: 347914312</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                 </div>
     
-                <div id="lipovitan" class="products">
+                <div id="nsnumber1" class="products">
                     <div class="product" data-barcode="493195856">
-                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
-                        <h3>Thùng 24 lon Coca 330 ml</h3>
+                        <img src="assets/img/water/mineral/ns_number1.jpg" alt="Water 1">
+                        <h3>Thùng 24 chai nước tinh khiết Number One 500 ml</h3>
                         <p>182.000đ</p>
                         <p class="barcode">Mã barcode: 493195856</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
-                    <div class="product" data-barcode="144771926">
-                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
-                        <h3>1 lon Coca 330 ml</h3>
-                        <p>10.000đ</p>
-                        <p class="barcode">Mã barcode: 144771926</p>
-                        <button>Mua</button>
-                    </div>
-                </div>
-
-                <div id="rockstar" class="products">
                     <div class="product" data-barcode="824907228">
-                        <img src="assets/img/water/coca24.jpg" alt="Water 1">
-                        <h3>Thùng 24 lon Coca 330 ml</h3>
-                        <p>182.000đ</p>
-                        <p class="barcode">Mã barcode: 824907228</p>
-                        <button>Mua</button>
-                    </div>
-                    <div class="product" data-barcode="685249633">
-                        <img src="assets/img/water/coca1.jpg" alt="Water 2">
-                        <h3>1 lon Coca 330 ml</h3>
+                        <img src="assets/img/water/mineral/ns_number1_1chai.jpg" alt="Water 2">
+                        <h3>1 chai nước tinh khiết Number One 500 ml</h3>
                         <p>10.000đ</p>
-                        <p class="barcode">Mã barcode: 685249633</p>
-                        <button>Mua</button>
+                        <p class="barcode">Mã barcode: 824907228</p>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                 </div>
             </div>
 
-
-            
-            <div id="snacks" class="category">
-                <h2>Snack</h2>
-                <div class="products">
+            <div class="category">
+                <h2>Bánh kẹo các loại</h2>
+                <div id="snacks" class="products">
                     <div class="product" data-barcode="385729104">
                         <img src="assets/img/snack/5k.jpg" alt="Snack 1">
                         <h3>Loại snack 5k</h3>
                         <p>5.000đ</p>
                         <p class="barcode">Mã barcode: 385729104</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                     <div class="product" data-barcode="451200757">
                         <img src="assets/img/snack/10k.png" alt="Snack 2">
                         <h3>Loại snack 10k</h3>
                         <p>10.000đ</p>
                         <p class="barcode">Mã barcode: 451200757</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                 </div>
             </div>
@@ -428,14 +339,14 @@
                         <h3>Thùng mì Hảo Hảo vị Tôm Chua Cay 75g x 30 gói Acecook</h3>
                         <p>180.000đ</p>
                         <p class="barcode">Mã barcode: 174039268</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                     <div class="product" data-barcode="286150394">
                         <img src="assets/img/noodle/haohao1.jpg" alt="Noodle 2">
                         <h3>1 gói mì Hảo Hảo vị Tôm Chua Cay 75g Acecook</h3>
                         <p>5.000đ</p>
                         <p class="barcode">Mã barcode: 286150394</p>
-                        <button>Mua</button>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
                     </div>
                 </div>
             </div>
@@ -532,6 +443,154 @@
                 searchProduct();
             }
         });
+
+        // Khởi tạo giỏ hàng
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Hàm thêm sản phẩm vào giỏ hàng
+    function addToCart(productElement) {
+        const name = productElement.querySelector('h3').innerText;
+        const price = productElement.querySelector('p').innerText;
+        const barcode = productElement.querySelector('.barcode').innerText.split(': ')[1];
+        const imgSrc = productElement.querySelector('img').src;
+
+        // Tạo đối tượng sản phẩm
+        const product = { name, price, barcode, imgSrc };
+
+        // Thêm sản phẩm vào giỏ hàng
+        cart.push(product);
+
+        // Lưu giỏ hàng vào localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert('Sản phẩm đã được thêm vào giỏ hàng!');
+    }
+
+    // Hàm hiển thị giỏ hàng (cập nhật thêm nút Thanh toán)
+    function viewCart() {
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (cartItems.length === 0) {
+            alert('Giỏ hàng hiện đang trống.');
+            return;
+        }
+
+        // Tạo giao diện hiển thị giỏ hàng
+        let cartHtml = `
+            <div class="cart-overlay">
+                <div class="cart-container">
+                    <h2>Giỏ hàng của bạn</h2>
+                    <div class="cart-items">
+                        ${cartItems.map((item, index) => `
+                            <div class="cart-item">
+                                <img src="${item.imgSrc}" alt="${item.name}">
+                                <div>
+                                    <h3>${item.name}</h3>
+                                    <p>${item.price}</p>
+                                    <p>Mã barcode: ${item.barcode}</p>
+                                </div>
+                                <button onclick="removeFromCart(${index})">Xóa</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <h3>Tổng tiền: ${calculateTotal(cartItems)} đ</h3>
+                    <button onclick="proceedToCheckout()">Thanh toán</button>
+                    <button onclick="closeCart()">Đóng</button>
+                </div>
+            </div>
+        `;
+
+        document.body.insertAdjacentHTML('beforeend', cartHtml);
+    }
+
+
+    // Hàm tính tổng tiền
+    function calculateTotal(cartItems) {
+        return cartItems.reduce((total, item) => {
+            let price = parseInt(item.price.replace(/\D/g, '')); // Chuyển giá từ chuỗi thành số
+            return total + price;
+        }, 0);
+    }
+
+    // Hàm xóa sản phẩm khỏi giỏ hàng
+    function removeFromCart(index) {
+        cart.splice(index, 1); // Xóa sản phẩm khỏi mảng giỏ hàng
+        localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật lại localStorage
+        document.querySelector('.cart-overlay').remove(); // Đóng giao diện giỏ hàng
+        viewCart(); // Hiển thị lại giỏ hàng
+    }
+
+    // Hàm đóng giỏ hàng
+    function closeCart() {
+        document.querySelector('.cart-overlay').remove();
+    }
+
+    // Hàm xử lý thanh toán
+    function proceedToCheckout() {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const total = calculateTotal(cartItems);
+
+        // Hiển thị form thanh toán
+        const checkoutHtml = `
+            <div class="checkout-overlay">
+                <div class="checkout-container">
+                    <h2>Thanh toán</h2>
+                    <p>Tổng tiền: ${total} đ</p>
+                    <form id="checkout-form">
+                        <label for="name">Họ và tên:</label>
+                        <input type="text" id="name" name="name" required>
+                        
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="text" id="phone" name="phone" required>
+
+                        <label for="address">Địa chỉ:</label>
+                        <input type="text" id="address" name="address" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <button type="submit">Xác nhận thanh toán</button>
+                    </form>
+                    <button onclick="closeCheckout()">Hủy</button>
+                </div>
+            </div>
+        `;
+
+        document.body.insertAdjacentHTML('beforeend', checkoutHtml);
+
+        // Gắn sự kiện "submit" cho form thanh toán
+        const form = document.getElementById('checkout-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Thu thập thông tin từ form
+            const name = form.name.value;
+            const phone = form.phone.value;
+            const address = form.address.value;
+            const email = form.email.value;
+
+            // Thực hiện xác nhận thanh toán
+            confirmOrder(name, phone, address, email, total);
+        });
+    }
+
+    // Hàm xác nhận đơn hàng
+    function confirmOrder(name, phone, address, email, total) {
+        alert(`Cảm ơn bạn, ${name}! Đơn hàng của bạn trị giá ${total} đ đã được xác nhận.`);
+        
+        // Xóa giỏ hàng sau khi thanh toán thành công
+        cart = [];
+        localStorage.removeItem('cart');
+
+        // Đóng giao diện thanh toán
+        document.querySelector('.checkout-overlay').remove();
+    }
+
+    // Hàm đóng giao diện thanh toán
+    function closeCheckout() {
+        document.querySelector('.checkout-overlay').remove();
+    }
+
 
     </script>
 </body>
