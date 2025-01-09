@@ -326,6 +326,10 @@ footer {
     cursor: pointer;
 }
 
+.cart-container button:hover {
+    background-color: #218838;
+}
+
 
 .checkout-overlay {
     position: fixed;
@@ -370,4 +374,8 @@ footer {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+.checkout-container button:hover {
+    background-color: #218838;
 }
