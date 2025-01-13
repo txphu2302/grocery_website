@@ -36,11 +36,18 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: white;
+header .logo img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is displayed as a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    padding: 10px 0; /* Add some padding around the image */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+header .logo img:hover {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
 }
 
 header .search-input {
@@ -177,6 +184,7 @@ header .actions img {
 }
 
 .product {
+    position: relative; /* Ensure the heart button is positioned relative to the product */
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -218,6 +226,28 @@ header .actions img {
 
 .product button:hover {
     background-color: #218838;
+}
+
+.product .heart-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.product .heart-button img {
+    width: 20px;
+    height: auto;
+    border-bottom: none;
+}
+
+.product .heart-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .barcode {
@@ -378,4 +408,82 @@ footer {
 
 .checkout-container button:hover {
     background-color: #218838;
+}
+
+
+/* Overlay for the favorites list */
+.prefer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Container for the favorites list */
+.prefer-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+/* Individual favorite item */
+.prefer-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Image for the favorite item */
+.prefer-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+/* Details for the favorite item */
+.prefer-item .product-details {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+/* Button to remove the favorite item */
+.prefer-item button {
+    background: #ff4d4d; /* Red background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Hover effect for the remove button */
+.prefer-item button:hover {
+    background-color: #ff1a1a; /* Darker red on hover */
+}
+
+/* Button to close the favorites list */
+.prefer-container button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Hover effect for the close button */
+.prefer-container button:hover {
+    background-color: #218838; /* Darker green on hover */
 }
