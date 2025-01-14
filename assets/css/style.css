@@ -37,8 +37,8 @@ header {
 }
 
 header .logo img {
-    width: 100px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
+    height: 40px;
+    width: auto;
     display: block; /* Ensure the image is displayed as a block element */
     margin: 0 auto; /* Center the image horizontally */
     padding: 10px 0; /* Add some padding around the image */
