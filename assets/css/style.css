@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    scroll-behavior: smooth;
 }
 
 #pay-button {
@@ -39,15 +39,15 @@ header {
 header .logo img {
     height: 40px;
     width: auto;
-    display: block; /* Ensure the image is displayed as a block element */
-    margin: 0 auto; /* Center the image horizontally */
-    padding: 10px 0; /* Add some padding around the image */
-    cursor: pointer; /* Change cursor to pointer */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    display: block;
+    margin: 0 auto;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 header .logo img:hover {
-    transform: scale(1.1); /* Slightly enlarge the image on hover */
+    transform: scale(1.1);
 }
 
 header .search-input {
@@ -112,7 +112,6 @@ header .actions img {
     height: 24px;
 }
 
-
 .main-container {
     display: flex;
     flex: 1;
@@ -120,43 +119,62 @@ header .actions img {
 }
 
 .sidebar {
-    width: 20%;
-    background-color: #333;
+    overflow-y: auto; /* Đúng */
+    background: linear-gradient(45deg, #333, #444);
     color: white;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar a {
-    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f4f4f9;
     text-decoration: none;
-    display: block;
-    padding: 10px 0;
-    border-bottom: 1px solid #444;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    border-radius: 5px;
 }
 
 .sidebar a:hover {
-    background-color: #28a745;
-    border-radius: 5px;
-    padding-left: 5px;
-}
-
-.sidebar a.active {
-    background-color: #28a745;
-    color: white;
-    border-radius: 5px;
+    background-color: #218838;
+    padding-left: 20px;
 }
 
 .sub-menu {
-    display: none;
-    padding-left: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0;
 }
+
+.sub-menu.open {
+    max-height: 500px; /* Đặt giá trị lớn hơn tổng chiều cao submenu */
+    padding: 10px 0;
+}
+
+.toggle-icon {
+    float: right;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-icon.open {
+    transform: rotate(45deg);
+}
+
 
 .sub-menu a {
-    color: #ccc
-
+    padding-left: 30px;
+    color: #ccc;
+    font-size: 14px;
 }
+
+.sub-menu a:hover {
+    color: white;
+}
+
 
 .content {
     flex: 1;
@@ -184,20 +202,20 @@ header .actions img {
 }
 
 .product {
-    position: relative; /* Ensure the heart button is positioned relative to the product */
+    position: relative;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 10px;
-    width: calc(80% / 4 - 20px);
+    width: calc(100% - 20px);
     text-align: center;
     padding: 10px;
 }
 
 .product img {
     width: 100%;
-    height: 200px; /* Fixed height for consistency */
+    height: 200px;
     object-fit: contain;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
@@ -257,7 +275,7 @@ header .actions img {
 }
 
 footer {
-    display: none; /* Hidden by default */
+    display: none;
     background-color: #333;
     color: white;
     text-align: center;
@@ -333,18 +351,17 @@ footer {
     padding-right: 10px;
 }
 
-
 .cart-item button {
-    background: #ff4d4d; /* Red background */
-    color: white; /* White text */
-    border: none; /* Remove border */
-    padding: 10px 20px; /* Add some padding */
-    cursor: pointer; /* Add a pointer cursor on hover */
-    border-radius: 5px; /* Rounded corners */
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .cart-item button:hover {
-    background-color: #ff1a1a; /* Darker red on hover */
+    background-color: #ff1a1a;
 }
 
 .cart-container button {
@@ -359,7 +376,6 @@ footer {
 .cart-container button:hover {
     background-color: #218838;
 }
-
 
 .checkout-overlay {
     position: fixed;
@@ -410,7 +426,6 @@ footer {
     background-color: #218838;
 }
 
-
 /* Overlay for the favorites list */
 .prefer-overlay {
     position: fixed;
@@ -459,31 +474,88 @@ footer {
 
 /* Button to remove the favorite item */
 .prefer-item button {
-    background: #ff4d4d; /* Red background */
-    color: white; /* White text */
-    border: none; /* Remove border */
-    padding: 10px 20px; /* Add some padding */
-    cursor: pointer; /* Add a pointer cursor on hover */
-    border-radius: 5px; /* Rounded corners */
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 /* Hover effect for the remove button */
 .prefer-item button:hover {
-    background-color: #ff1a1a; /* Darker red on hover */
+    background-color: #ff1a1a;
 }
 
 /* Button to close the favorites list */
 .prefer-container button {
     margin-top: 15px;
     padding: 10px 20px;
-    background: #28a745; /* Green background */
-    color: white; /* White text */
-    border: none; /* Remove border */
-    cursor: pointer; /* Add a pointer cursor on hover */
-    border-radius: 5px; /* Rounded corners */
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 /* Hover effect for the close button */
 .prefer-container button:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838;
+}
+
+/* Responsive styles */
+@media (min-width: 600px) {
+    .main-container {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 25%;
+    }
+
+    .content {
+        width: 75%;
+    }
+
+    .products {
+        justify-content: flex-start;
+    }
+
+    .product {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100%;
+        width: 250px;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .main-container {
+        margin-left: 0;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .sidebar {
+        width: 20%;
+    }
+
+    .content {
+        width: 80%;
+    }
+
+    .product {
+        width: 20%;
+    }
 }
