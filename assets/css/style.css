@@ -285,6 +285,25 @@ footer {
     width: 100%;
 }
 
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+footer .social-links img {
+    width: 24px;
+    height: 24px;
+}
+
+/* hover for footer img */
+footer .social-links img:hover {
+    transform: scale(1.1);
+}
+
 .search-bar {
     text-align: center;
     margin: 20px 0;
