@@ -49,18 +49,18 @@ window.addEventListener('scroll', () => {
 
 // Search by barcode
 function searchByBarcode() {
-    const searchValue = document.getElementById('barcode-search').value.trim();
+    const barcodeInput = document.getElementById('barcode-search').value;
     const products = document.querySelectorAll('.product');
     let found = false;
 
     products.forEach(product => {
         const barcode = product.getAttribute('data-barcode');
-        if (barcode === searchValue) {
-            product.classList.remove('hidden');
+        if (barcode === barcodeInput) {
             product.scrollIntoView({ behavior: 'smooth' });
+            product.classList.add('highlight'); // Add highlight class to the found product
             found = true;
         } else {
-            product.classList.add('hidden');
+            product.classList.remove('highlight'); // Remove highlight from other products
         }
     });
 
@@ -326,3 +326,23 @@ function removeFromPrefer(index) {
 function closePrefer() {
     document.querySelector('.prefer-overlay').remove();
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const products = document.querySelectorAll('.product');
+    const barcodeSet = new Set();
+
+    products.forEach(product => {
+        let barcode = product.getAttribute('data-barcode');
+        while (barcodeSet.has(barcode)) {
+            barcode = generateNewBarcode();
+        }
+        barcodeSet.add(barcode);
+        product.setAttribute('data-barcode', barcode);
+        product.querySelector('.barcode').textContent = `Mã barcode: ${barcode}`;
+    });
+
+    function generateNewBarcode() {
+        return Math.floor(Math.random() * 1000000000).toString();
+    }
+});
