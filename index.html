@@ -15,8 +15,8 @@
             <img src="assets/img/logo/transperant/trans.png" alt="img-logo">
         </div>
         <div class="search-input">
-            <input type="text" id="searchInput" placeholder="Nhập tên sản phẩm..." />
-            <button id="clearSearch" onclick="clearSearchInput()">X</button>
+            <input type="text" id="searchInput" placeholder="Nhập tên sản phẩm..." oninput="searchProduct()" />
+            <button onclick="clearSearchInput()">X</button>
         </div>
         <div class="actions">
             <button><img src="assets/img/cart/cart-shopping-solid.svg" alt="Cart" onclick="viewCart()" /></button>
@@ -24,6 +24,7 @@
         </div>        
     </header>
 
+    
     <div class="main-container">
         <div class="sidebar">
             <a href="#beer" class="parent-link">BIA <span class="toggle-icon">+</span></a>

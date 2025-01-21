@@ -81,15 +81,23 @@ function scrollToSearch() {
 function searchProduct() {
     const input = document.getElementById('searchInput').value.toLowerCase();
     const products = document.querySelectorAll('.product');
+    let firstMatch = null;
 
     products.forEach(product => {
         const productName = product.querySelector('h3').textContent.toLowerCase();
         if (productName.includes(input)) {
             product.style.display = 'block';
+            if (!firstMatch) {
+                firstMatch = product;
+            }
         } else {
             product.style.display = 'none';
         }
     });
+
+    if (firstMatch) {
+        firstMatch.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 function clearSearchInput() {
