@@ -47,6 +47,8 @@ window.addEventListener('scroll', () => {
     });
 });
 
+
+
 // Search by barcode
 function searchByBarcode() {
     const barcodeInput = document.getElementById('barcode-search').value;
