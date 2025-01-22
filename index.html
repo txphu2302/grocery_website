@@ -123,11 +123,11 @@
                     <a href="#ca-phe">Cà phê</a>
                     <a href="#tra">Trà</a>
                 </div>
-            <a href="#ice-cream" class="parent-link">KEM, SỮA CHUA<span class="toggle-icon">+</span></a>
+            <a href="#ice-cream" class="parent-link">KEM, YAOURT<span class="toggle-icon">+</span></a>
                 <div class="sub-menu">
                     <a href="#wall's">Kem Wall's</a>
                     <a href="#kem-dong-goi">Kem đóng gói</a>
-                    <a href="#sua-chua">Sữa chua</a>
+                    <a href="#yaourt">Yaourt</a>
                 </div>
             <a href="#canned-food" class="parent-link">ĐỒ HỘP<span class="toggle-icon">+</span></a>
                 <div class="sub-menu">
@@ -1675,7 +1675,27 @@
                     <div id="ca-phe" class="product" data-barcode="385729104">
                         <img src="assets/img/coffee-tea/nescafe.jpg" alt="Snack 1">
                         <h3>Cà Phê Nescafe 3In1 Vị Nguyên Bản Bịch 46 Gói 17G</h3>
-                        <p>61.900đ</p>
+                        <p>135.000đ</p>
+                        <p class="barcode">Mã barcode: 385729104</p>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
+                        <button class="heart-button" onclick="addToFavorites(this.parentElement)">
+                            <img src="assets/img/heart/Heart-04.svg" alt="Add to Favorites">
+                        </button>
+                    </div>
+                    <div id="ca-phe" class="product" data-barcode="385729104">
+                        <img src="assets/img/coffee-tea/nescafe2.jpg" alt="Snack 1">
+                        <h3>Cà Phê Nescafe 3In1 Vị Nguyên Bản Bịch 46 Gói 17G</h3>
+                        <p>135.000đ</p>
+                        <p class="barcode">Mã barcode: 385729104</p>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
+                        <button class="heart-button" onclick="addToFavorites(this.parentElement)">
+                            <img src="assets/img/heart/Heart-04.svg" alt="Add to Favorites">
+                        </button>
+                    </div>
+                    <div id="ca-phe" class="product" data-barcode="385729104">
+                        <img src="assets/img/coffee-tea/nescafe-den.jpg" alt="Snack 1">
+                        <h3>Cà Phê Nescafe Việt cà phê đen đá </h3>
+                        <p>130.000đ</p>
                         <p class="barcode">Mã barcode: 385729104</p>
                         <button onclick="addToCart(this.parentElement)">Mua</button>
                         <button class="heart-button" onclick="addToFavorites(this.parentElement)">
@@ -1697,9 +1717,8 @@
 
             <div class="category">
                 <h2>Kem, sữa chua</h2>
-                <div id="wall's" class="products">
-                    
-                    <div class="product" data-barcode="436629708">
+                <div class="products">
+                    <div id="wall's" class="product" data-barcode="436629708">
                         <img src="assets/img/ice-cream/kem-hop.webp" alt="Snack 1">
                         <h3>Kem hộp Wall's 2 trong 1 socola vani vụn socola 760ml</h3>
                         <p>75.000đ</p>
@@ -1709,7 +1728,7 @@
                             <img src="assets/img/heart/Heart-04.svg" alt="Add to Favorites">
                         </button>
                     </div>
-                    <div class="product" data-barcode="436629708">
+                    <div id="wall's"  class="product" data-barcode="436629708">
                         <img src="assets/img/ice-cream/kem-hop-2.webp" alt="Snack 1">
                         <h3>Kem hộp Wall's 3 trong 1 vani - dâu - socola 760ml</h3>
                         <p>75.000đ</p>
@@ -1719,7 +1738,7 @@
                             <img src="assets/img/heart/Heart-04.svg" alt="Add to Favorites">
                         </button>
                     </div>
-                    <div class="product" data-barcode="436629708">
+                    <div id="wall's" class="product" data-barcode="436629708">
                         <img src="assets/img/ice-cream/oc-que.jpg" alt="Snack 1">
                         <h3>Kem ốc quế CORNETTO WALL'S 135ml</h3>
                         <p>22.000đ</p>
@@ -1729,7 +1748,7 @@
                             <img src="assets/img/heart/Heart-04.svg" alt="Add to Favorites">
                         </button>
                     </div>
-                    <div class="product" data-barcode="436629708">
+                    <div id="wall's" class="product" data-barcode="436629708">
                         <img src="assets/img/ice-cream/oc-que.jpg" alt="Snack 1">
                         <h3>Kem ốc quế CORNETTO WALL'S 66g</h3>
                         <p>19.000đ</p>
@@ -1739,7 +1758,7 @@
                             <img src="assets/img/heart/Heart-04.svg" alt="Add to Favorites">
                         </button>
                     </div>
-                    <div class="product" data-barcode="378785546">
+                    <div id="wall's" class="product" data-barcode="378785546">
                         <img src="assets/img/ice-cream/kem-ly.jpg" alt="Snack 2">
                         <h3>Kem ly Wall's cup 90ml vị Socola/Vani/Dâu/Socola Chip</h3>
                         <p>12.000đ</p>
@@ -1749,7 +1768,7 @@
                             <img src="assets/img/heart/Heart-04.svg" alt="Add to Favorites">
                         </button>
                     </div>
-                    <div class="product" data-barcode="253466719">
+                    <div id="wall's" class="product" data-barcode="253466719">
                         <img src="assets/img/ice-cream/topten.png" alt="Snack 2">
                         <h3>Kem Walls Topten với vỏ Socola đậu phộng</h3>
                         <p>12.000đ</p>
@@ -1760,7 +1779,7 @@
                         </button>
                     </div>
 
-                    <div class="product" data-barcode="990692994">
+                    <div id="wall's" class="product" data-barcode="990692994">
                         <img src="assets/img/ice-cream/khoai-mon.webp" alt="Snack 2">
                         <h3>Kem khoai môn dẻo Wall's Asian Delight Taro 60ml</h3>
                         <p>12.000đ</p>
@@ -1771,7 +1790,7 @@
                         </button>
                     </div>
 
-                    <div class="product" data-barcode="277554686">
+                    <div id="wall's"  class="product" data-barcode="277554686">
                         <img src="assets/img/ice-cream/kem-keo-no.webp" alt="Snack 2">
                         <h3>Kem kẹo nổ trái cây Wall's Paddle Pop Dragon 47ML</h3>
                         <p>9.000đ</p>
@@ -1782,7 +1801,7 @@
                         </button>
                     </div>
 
-                    <div class="product" data-barcode="277554686">
+                    <div id="wall's"  class="product" data-barcode="277554686">
                         <img src="assets/img/ice-cream/cau-vong.webp" alt="Snack 2">
                         <h3>Kem cầu vồng Wall's Paddle Pop Rainbow 53ml</h3>
                         <p>9.000đ</p>
@@ -1793,7 +1812,7 @@
                         </button>
                     </div>
 
-                    <div class="product" data-barcode="119977671">
+                    <div id="wall's"  class="product" data-barcode="119977671">
                         <img src="assets/img/ice-cream/dua-hau.webp" alt="Snack 2">
                         <h3>Kem dưa hấu Wall's Paddle Pop Tangmo 62ML</h3>
                         <p>9.000đ</p>
@@ -1804,7 +1823,7 @@
                         </button>
                     </div>
 
-                    <div class="product" data-barcode="997089269">
+                    <div id="wall's"  class="product" data-barcode="997089269">
                         <img src="assets/img/ice-cream/kem-doi.webp" alt="Snack 2">
                         <h3>Kem cam đôi Wall's Paddle Pop Yakoo Orange 68ML</h3>
                         <p>5.000đ</p>
@@ -1815,7 +1834,7 @@
                         </button>
                     </div>
 
-                    <div class="product" data-barcode="64420522">
+                    <div id="wall's"  class="product" data-barcode="64420522">
                         <img src="assets/img/ice-cream/trai-cay.jpg" alt="Snack 2">
                         <h3>Kem trái cây nhiệt đới Wall's Paddle Pop Fruity (39ML)</h3>
                         <p>5.000đ</p>
@@ -1825,8 +1844,28 @@
                             <img src="assets/img/heart/Heart-04.svg" alt="Add to Favorites">
                         </button>
                     </div>
-
                     
+                    <div id="kem-dong-goi"  class="product" data-barcode="64420522">
+                        <img src="assets/img/ice-cream/kem-thuong.jpg" alt="Snack 2">
+                        <h3>Kem đóng gói Gold</h3>
+                        <p>4.000đ</p>
+                        <p class="barcode">Mã barcode: 64420522</p>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
+                        <button class="heart-button" onclick="addToFavorites(this.parentElement)">
+                            <img src="assets/img/heart/Heart-04.svg" alt="Add to Favorites">
+                        </button>
+                    </div>
+
+                    <div id="yaourt"  class="product" data-barcode="64420522">
+                        <img src="assets/img/ice-cream/yaourt.jpg" alt="Snack 2">
+                        <h3>Sữa chua Yaourt</h3>
+                        <p>2.000đ</p>
+                        <p class="barcode">Mã barcode: 64420522</p>
+                        <button onclick="addToCart(this.parentElement)">Mua</button>
+                        <button class="heart-button" onclick="addToFavorites(this.parentElement)">
+                            <img src="assets/img/heart/Heart-04.svg" alt="Add to Favorites">
+                        </button>
+                    </div>
                     
                 </div>
             </div>
